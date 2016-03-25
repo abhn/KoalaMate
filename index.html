@@ -1,0 +1,86 @@
+<title>KoalaMate</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script>window.$ = window.jQuery = require('./static/jquery-2.2.2.min.js');</script>
+
+
+<!-- custom JS, if any, goes below this line -->
+<script src="static/index.js"></script>
+<script src="static/calculator.js"></script>
+
+<!-- custom CSS, if any, goes below this line -->
+<link rel="stylesheet" href="static/main.css">
+<link rel="stylesheet" href="static/calculator.css">
+
+<!-- body starts here -->
+<div class="container-fluid">
+    <div class="row center-block">
+        <div id="askme" class="col-md-6">
+            <div id="askme-form">
+                <center>
+                    <h3>AskMeAnything!</h3>
+                    <input id="inputField" type="text" name="query" />
+                    <button id="searchBtn" name="submit" type="button">Search!</button>
+                </center>
+            </div>
+            <ul id="askme-results">
+                
+            </ul>
+        </div><!-- askme -->
+        <div id="sidebar" class="col-md-4">
+            <div id="scratchpad">
+                <center>
+                    <h1><font face="Arapey">Scratchpad</font></h1>
+                    <div class="form-group">
+                        <textarea class="form-control" id="content" rows="5" style="padding:50px;font-size:20px;color:black;" autofocus></textarea>
+                    </div>
+                </center>
+                <button class="btn btn-sm" onclick="copy()" width="100px"><font face="Arapey" size="3px">Copy</font></button> &nbsp;&nbsp;
+                <div id="copied" style="display:none">Copied!</div>
+                <font face="Arapey" size="4px" class="pull-right" style="margin-top:2px;">Total Words:&nbsp;<span id="w_count">0</span></font>
+            </div>
+                
+            <!-- calculator starts -->
+            <div id="calculator">
+                <div id="background">
+                    <div id="result"></div>
+                    <div id="main">
+                        <div id="first-rows">
+                            <button class="del-bg" id="delete">Del</button>
+                            <button value="%" class="btn-style operator opera-bg fall-back">%</button>
+                            <button value="+" class="btn-style opera-bg value align operator">+</button>
+                        </div>
+                        <div class="rows">
+                            <button value="7" class="btn-style num-bg num first-child">7</button>
+                            <button value="8" class="btn-style num-bg num">8</button>
+                            <button value="9" class="btn-style num-bg num">9</button>
+                            <button value="-" class="btn-style opera-bg operator">-</button>
+                        </div>
+                        <div class="rows">
+                            <button value="4" class="btn-style num-bg num first-child">4</button>
+                            <button value="5" class="btn-style num-bg num">5</button>
+                            <button value="6" class="btn-style num-bg num">6</button>
+                            <button value="*" class="btn-style opera-bg operator">x</button>
+                        </div>
+                        <div class="rows">
+                            <button value="1" class="btn-style num-bg num first-child">1</button>
+                            <button value="2" class="btn-style num-bg num">2</button>
+                            <button value="3" class="btn-style num-bg num">3</button>
+                            <button value="/" class="btn-style opera-bg operator">/</button>
+                        </div>
+                        <div class="rows">
+                            <button value="0" class="num-bg zero" id="delete">0</button>
+                            <button value="." class="btn-style num-bg period fall-back">.</button>
+                            <button value="=" id="eqn-bg" class="eqn align">=</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
