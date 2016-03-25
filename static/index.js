@@ -7,7 +7,6 @@ $(document).ready(() => {
                 success: (result) => {
                     let xmlResultSet = $($.parseXML(result));
                     let plainTexts = result.getElementsByTagName("plaintext");
-                    let DYM = result.getElementsByTagName
                     for(i=1; i<plainTexts.length; i++) {
                         if(plainTexts[i].innerHTML) {
                             $('#askme-results').append('<li>' + plainTexts[i].innerHTML + '</li>');
