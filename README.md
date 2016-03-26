@@ -5,7 +5,7 @@ Built to help students and researchers discover things without having to open an
 ### Installation
 ```
 npm install -g electron-prebuilt
-git pull https://github.com/abhn/KoalaMate
+git clone https://github.com/abhn/KoalaMate
 cd KoalaMate
 npm install
 electron .
