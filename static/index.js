@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('#searchBtn').click(() => {
+    $('#searchBtn').on('click keyup', (e) => {
         let queryStr = $('#inputField').val();
         $('#askme-results').empty();
         $.post( 
@@ -47,6 +47,7 @@ $(document).ready(() => {
     });
 });
 
+// counter code
 counter = () => {
     let value = $('#content').val();
     if (value.length == 0) {
@@ -59,7 +60,8 @@ counter = () => {
 
 };
 
-$(document).ready(function() {
+// counter code
+$(document).ready(() => {
     $('#content').change(counter);
     $('#content').keydown(counter);
     $('#content').keypress(counter);
@@ -68,9 +70,33 @@ $(document).ready(function() {
     $('#content').focus(counter);
 });
 		
+// copy button
 function copy() {
     let content = document.getElementById('content').select();
     document.execCommand('copy');
     let run = window.getSelection().removeAllRanges();
     $('#copied').fadeIn(400).delay(1000).fadeOut(400);
 }
+
+$(document).ready(() => {
+    $('#calculator').hide(500);
+    $('#scratchpad').hide(500);
+    
+    $('.right-side').click(() => {
+        $('#calculator').show(500);
+        $('#askme-form').hide(500);
+        $('#scratchpad').hide(500);
+    });
+    
+    $('.left-side').click(() => {
+        $('#scratchpad').show(500);
+        $('#askme-form').hide(500);
+        $('#calculator').hide(500);
+    });
+    
+    $('#tuna-image').click(() => {
+        $('#askme-form').show(500);
+        $('#scratchpad').hide(500);
+        $('#calculator').hide(500);
+    });
+});

@@ -19,35 +19,39 @@
 
 <!-- body starts here -->
 <div class="container-fluid">
-    <div class="row center-block">
-        <div id="askme" class="col-md-6">
+    <div id="tuna-image">
+        <center><img src="static/tuna.png" width="240" height="200"></center>
+    </div>
+    <div class="row">
+        <div class="col-md-3 left-side"><img id="left-image" src="static/scratch.jpg" width="200" height="200"></div>
+        <div class="col-md-6 center-side">
+            <!-- ask-me-->
             <div id="askme-form">
                 <center>
                     <h3>AskMeAnything!</h3>
-                    <input id="inputField" type="text" name="query" />
-                    <button id="searchBtn" name="submit" type="button">Search!</button>
+                    <div class="input-group">
+                        <input id="inputField" type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+                    </div>
+                    <button id="searchBtn" class="btn btn-primary" name="submit" type="submit" >Search!</button>
+                    <ul id="askme-results"></ul>
                 </center>
             </div>
-            <ul id="askme-results">
-                
-            </ul>
-        </div><!-- askme -->
-        <div id="sidebar" class="col-md-4">
+            <!-- scratchpad -->
             <div id="scratchpad">
                 <center>
                     <h1><font face="Arapey">Scratchpad</font></h1>
                     <div class="form-group">
-                        <textarea class="form-control" id="content" rows="5" style="padding:50px;font-size:20px;color:black;" autofocus></textarea>
+                        <textarea class="form-control" id="content" rows="5" style="padding:50px;font-size:20px;color:black;"></textarea>
                     </div>
                 </center>
                 <button class="btn btn-sm" onclick="copy()" width="100px"><font face="Arapey" size="3px">Copy</font></button> &nbsp;&nbsp;
                 <div id="copied" style="display:none">Copied!</div>
                 <font face="Arapey" size="4px" class="pull-right" style="margin-top:2px;">Total Words:&nbsp;<span id="w_count">0</span></font>
             </div>
-                
             <!-- calculator starts -->
             <div id="calculator">
                 <div id="background">
+                    <center><h3>Calculator</h3></center>
                     <div id="result"></div>
                     <div id="main">
                         <div id="first-rows">
@@ -82,5 +86,6 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-3 right-side"><img id="right-image" src="static/calc.png" width="200" height="200"></div>
     </div>
 </div>
