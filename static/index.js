@@ -100,3 +100,27 @@ $(document).ready(() => {
         $('#calculator').hide(500);
     });
 });
+
+$(".left-side").hover( function (e) {
+    $(this).toggleClass('animated pulse', e.type === 'mouseenter');
+});
+
+$(".right-side").hover( function (e) {
+    $(this).toggleClass('animated pulse', e.type === 'mouseenter');
+});
+
+$("#tuna-image").hover( function (e) {
+    $(this).toggleClass('animated pulse', e.type === 'mouseenter');
+});
+
+var ipc = require('electron').ipcRenderer;
+
+var about = document.querySelector('#about');
+about.addEventListener('click', function () {
+    ipc.send('open-about-window');
+});
+
+var index = document.querySelector('#index');
+index.addEventListener('click', function () {
+    ipc.send('open-index-window');
+});

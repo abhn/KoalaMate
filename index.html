@@ -6,86 +6,121 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script>window.$ = window.jQuery = require('./static/jquery-2.2.2.min.js');</script>
-
-
-<!-- custom JS, if any, goes below this line -->
-<script src="static/index.js"></script>
-<script src="static/calculator.js"></script>
+<script>
+    window.$ = window.jQuery = require('./static/jquery-2.2.2.min.js');
+</script>
 
 <!-- custom CSS, if any, goes below this line -->
 <link rel="stylesheet" href="static/main.css">
 <link rel="stylesheet" href="static/calculator.css">
+<link rel="stylesheet" href="static/animate.css">
 
 <!-- body starts here -->
-<div class="container-fluid">
-    <div id="tuna-image">
-        <center><img src="static/tuna.png" width="240" height="200"></center>
+<!-- navbar first -->
+
+<nav class="navbar navbar-default">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a id="index" href="index.html">Home<span class="sr-only">(current)</span></a></li>
+            <li><a id="about" href="about.html">About Us</a></li>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="javascript: require('shell').openExternal('https://github.com/abhn/koalamate');">Github</a></li>
+        </ul>
     </div>
-    <div class="row">
-        <div class="col-md-3 left-side"><img id="left-image" src="static/scratch.jpg" width="200" height="200"></div>
-        <div class="col-md-6 center-side">
-            <!-- ask-me-->
-            <div id="askme-form">
-                <center>
-                    <h3>AskMeAnything!</h3>
-                    <div class="input-group">
-                        <input id="inputField" type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+</nav>
+
+<div id="main-row" class="row"> <!--row2-->
+    <!-- stupid mansi -->
+    <div class="col-md-2"> <!--col1, row2-->
+        <div id="tuna-image"> 
+            <img width="200px" height="200px" src="static/tuna.png" /> 
+        </div>
+        <div class="left-side"> 
+            <img width="200px" height="200px" src="static/scratch.jpg" /> 
+        </div>
+        <div class="right-side"> 
+            <img width="200px" height="200px" src="static/calc.png" /> 
+        </div>
+    </div> 
+    <div class="col-md-8">
+        <h1><img src="static/koala.jpg" width="60px" height="60px">KOALAMATE</h1>
+        <div id="askme-form" id="askme-form">
+            <center>
+                <h3>AskMeAnything!</h3>
+                <div class="input-group">
+                    <input id="inputField" type="text" class="form-control" placeholder="Query" aria-describedby="sizing-addon2">
+                </div>
+                <button id="searchBtn" class="btn btn-primary" name="submit" type="submit" >Search!</button>
+                <ul id="askme-results"></ul>
+            </center>
+        </div>
+
+        <!-- scratchpad -->
+        <div id="scratchpad">
+            <center>
+                <h3><font face="Arapey">Scratchpad</font></h3>
+                <div class="form-group">
+                    <textarea class="form-control" id="content" rows="5" style="padding:50px;font-size:20px;color:black;"></textarea>
+                </div>
+            </center>
+            <button class="btn btn-sm" onclick="copy()" width="100px"><font face="Arapey" size="3px">Copy</font></button> &nbsp;&nbsp;
+            <div id="copied" style="display:none">Copied!</div>
+            <font face="Arapey" size="4px" class="pull-right" style="margin-top:2px;">Total Words:&nbsp;<span id="w_count">0</span></font>
+        </div>
+
+        <!-- calculator starts -->
+        <div id="calculator">
+            <div id="background">
+                <center><h3>Calculator</h3></center>
+                <div id="result"></div>
+                <div id="main">
+                    <div id="first-rows">
+                        <button class="del-bg" id="delete">Del</button>
+                        <button value="%" class="btn-style operator opera-bg fall-back">%</button>
+                        <button value="+" class="btn-style opera-bg value align operator">+</button>
                     </div>
-                    <button id="searchBtn" class="btn btn-primary" name="submit" type="submit" >Search!</button>
-                    <ul id="askme-results"></ul>
-                </center>
-            </div>
-            <!-- scratchpad -->
-            <div id="scratchpad">
-                <center>
-                    <h1><font face="Arapey">Scratchpad</font></h1>
-                    <div class="form-group">
-                        <textarea class="form-control" id="content" rows="5" style="padding:50px;font-size:20px;color:black;"></textarea>
+                    <div class="rows">
+                        <button value="7" class="btn-style num-bg num first-child">7</button>
+                        <button value="8" class="btn-style num-bg num">8</button>
+                        <button value="9" class="btn-style num-bg num">9</button>
+                        <button value="-" class="btn-style opera-bg operator">-</button>
                     </div>
-                </center>
-                <button class="btn btn-sm" onclick="copy()" width="100px"><font face="Arapey" size="3px">Copy</font></button> &nbsp;&nbsp;
-                <div id="copied" style="display:none">Copied!</div>
-                <font face="Arapey" size="4px" class="pull-right" style="margin-top:2px;">Total Words:&nbsp;<span id="w_count">0</span></font>
-            </div>
-            <!-- calculator starts -->
-            <div id="calculator">
-                <div id="background">
-                    <center><h3>Calculator</h3></center>
-                    <div id="result"></div>
-                    <div id="main">
-                        <div id="first-rows">
-                            <button class="del-bg" id="delete">Del</button>
-                            <button value="%" class="btn-style operator opera-bg fall-back">%</button>
-                            <button value="+" class="btn-style opera-bg value align operator">+</button>
-                        </div>
-                        <div class="rows">
-                            <button value="7" class="btn-style num-bg num first-child">7</button>
-                            <button value="8" class="btn-style num-bg num">8</button>
-                            <button value="9" class="btn-style num-bg num">9</button>
-                            <button value="-" class="btn-style opera-bg operator">-</button>
-                        </div>
-                        <div class="rows">
-                            <button value="4" class="btn-style num-bg num first-child">4</button>
-                            <button value="5" class="btn-style num-bg num">5</button>
-                            <button value="6" class="btn-style num-bg num">6</button>
-                            <button value="*" class="btn-style opera-bg operator">x</button>
-                        </div>
-                        <div class="rows">
-                            <button value="1" class="btn-style num-bg num first-child">1</button>
-                            <button value="2" class="btn-style num-bg num">2</button>
-                            <button value="3" class="btn-style num-bg num">3</button>
-                            <button value="/" class="btn-style opera-bg operator">/</button>
-                        </div>
-                        <div class="rows">
-                            <button value="0" class="num-bg zero" id="delete">0</button>
-                            <button value="." class="btn-style num-bg period fall-back">.</button>
-                            <button value="=" id="eqn-bg" class="eqn align">=</button>
-                        </div>
+                    <div class="rows">
+                        <button value="4" class="btn-style num-bg num first-child">4</button>
+                        <button value="5" class="btn-style num-bg num">5</button>
+                        <button value="6" class="btn-style num-bg num">6</button>
+                        <button value="*" class="btn-style opera-bg operator">x</button>
+                    </div>
+                    <div class="rows">
+                        <button value="1" class="btn-style num-bg num first-child">1</button>
+                        <button value="2" class="btn-style num-bg num">2</button>
+                        <button value="3" class="btn-style num-bg num">3</button>
+                        <button value="/" class="btn-style opera-bg operator">/</button>
+                    </div>
+                    <div class="rows">
+                        <button value="0" class="num-bg zero" id="delete">0</button>
+                        <button value="." class="btn-style num-bg period fall-back">.</button>
+                        <button value="=" id="eqn-bg" class="eqn align">=</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 right-side"><img id="right-image" src="static/calc.png" width="200" height="200"></div>
+    
     </div>
+    <div class="col-md-2">
+    </div>
+</div> <!--row2 ends-->
+
+<!--
+<div class="row">
+	<div class="col-md-12">
+        <footer>&copy 2016 KoalaMate. All Rights Reserved</footer>
+	</div>
 </div>
+-->
+
+<!-- custom JS, if any, goes below this line -->
+<script src="static/index.js"></script>
+<script src="static/calculator.js"></script>

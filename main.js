@@ -6,6 +6,8 @@ let http = require('http');
 let express = require('express')();
 let MongoClient = require('mongodb').MongoClient;
 let mainWindow = null;
+let aboutWindow = null;
+let ipc = require('electron').ipcMain;
 let bodyParser = require('body-parser');
 
 
@@ -18,7 +20,16 @@ app.on('ready', () => {
         width: 800
     });
     mainWindow.loadURL('file:///' + __dirname + '/index.html');
+    mainWindow.setMenuBarVisibility(false);
+    mainWindow.setAutoHideMenuBar(true);
+    mainWindow.maximize();
 });
+
+ipc.on('open-about-window', function () {
+    console.log('about called');
+    mainWindow.loadURL('file:///' + __dirname + '/about.html');
+});
+
 
 let mongo = require('./mongo.js')(express);
 

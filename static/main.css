@@ -1,5 +1,5 @@
 textarea {
-    width: 500px;
+    width: inherit;
     height: 500px;
 }
 
@@ -35,3 +35,52 @@ textarea {
     float: left;
 }
 
+h1 { 
+    color: crimson; 
+    font-size: 48px; 
+    font-family: 'Signika', sans-serif; 
+    padding-bottom: 10px; 
+    text-align: center;
+}
+
+
+
+.container {
+	max-width: 100%;
+}
+
+.row {
+	max-width: 100%;
+	height: 150px;
+}
+
+img {
+	margin: auto;
+	vertical-align: middle;
+}
+
+footer {
+	text-align: center;
+}
+
+.about {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-name {
+    text-align: center;
+    color: crimson; 
+}
+
+h4 {
+    text-align: center;
+    color: dimgray;
+}
+
+p {
+    font-family: 'Signika', sans-serif; 
+    text-align: center;
+    color: dimgray;
+}
