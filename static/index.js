@@ -45,6 +45,44 @@ $(document).ready(() => {
         );
 
     });
+    
+    // for history button
+    $('#historyBtn').on('click', (e) => {
+        $('#askme-results').empty();
+        $.ajax({
+            url: 'http://localhost:1356/history',
+            success: (result) => {
+                // I am literally writing this in a train dabba
+                for(var i=0; i<result['data'].length; i++) {
+                    $('#askme-results').append('<li class="list-group-item"><a href="#">' + result["data"][i]["query"].toUpperCase() + '</a></li>');
+                }
+            }
+        });
+    });
+    
+    $('#askme-results').on('click', (e) => {
+        let query = e.target.innerHTML.toLowerCase();
+        $('#askme-results').empty();
+        $.post( 
+            'http://localhost:1356/exists', 
+            { query: query }, 
+            (data, status) => {
+                console.log('local query');
+                // no xml parsing as above query returned native xml,
+                // Did you realize that I'm a genius?
+                let plainTexts = data.getElementsByTagName("plaintext");
+                for(i=1; i<plainTexts.length; i++) {
+                    if(plainTexts[i].innerHTML) {
+                        $('#askme-results').append('<li class="list-group-item">' + plainTexts[i].innerHTML + '</li>');
+                    }
+                }
+            }
+        );
+    });
+    
+    $('#clearBtn').on('click', (e) => {
+         $('#askme-results').empty();
+    });
 });
 
 // counter code
