@@ -13,7 +13,7 @@ $(document).ready(() => {
                     let plainTexts = data.getElementsByTagName("plaintext");
                     for(i=1; i<plainTexts.length; i++) {
                         if(plainTexts[i].innerHTML) {
-                            $('#askme-results').append('<li>' + plainTexts[i].innerHTML + '</li>');
+                            $('#askme-results').append('<li class="list-group-item">' + plainTexts[i].innerHTML + '</li>');
                         }
                     }
                 } else {
@@ -25,7 +25,7 @@ $(document).ready(() => {
                             let plainTexts = result.getElementsByTagName("plaintext");
                             for(i=1; i<plainTexts.length; i++) {
                                 if(plainTexts[i].innerHTML) {
-                                    $('#askme-results').append('<li>' + plainTexts[i].innerHTML + '</li>');
+                                    $('#askme-results').append('<li class="list-group-item">' + plainTexts[i].innerHTML + '</li>');
                                 }
                             }
                             // inserting into local database
