@@ -18,4 +18,4 @@ This was my 6th semester software engineering project. I am attaching some scree
 ![KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala1.png)
 ![KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala2.png)
 
-PS I got an A++ grade for this demo. My team mates for this project were [Ankit Bhowmick](https://github.com/ankub) and [Manasi Muke](https://github.com/manasimuke).
+My team mates for this project were [Ankit Bhowmick](https://github.com/ankub) and [Manasi Muke](https://github.com/manasimuke).
