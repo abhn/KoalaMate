@@ -15,8 +15,8 @@ electron .
 
 This was my 6th semester software engineering project. I am attaching some screenshots of the demo application
 
-[!KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala1.png)
-[!KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala2.png)
+![KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala1.png)
+![KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala2.png)
 
 PS I got an A++ grade for this demo.
 
