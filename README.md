@@ -18,4 +18,6 @@ This was my 6th semester software engineering project. I am attaching some scree
 [!KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala1.png)
 [!KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala2.png)
 
+PS I got an A++ grade for this demo.
+
 Please feel free to send pull requests to improve this litte project.
