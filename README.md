@@ -10,4 +10,12 @@ cd KoalaMate
 npm install
 electron .
 ```
+
+### Screenshots
+
+This was my 6th semester software engineering project. I am attaching some screenshots of the demo application
+
+[!KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala1.png)
+[!KoalaMate](https://raw.githubusercontent.com/abhn/KoalaMate/master/static/koala2.png)
+
 Please feel free to send pull requests to improve this litte project.
