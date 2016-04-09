@@ -1,7 +1,7 @@
 ## KoalaMate
 
 Built to help students and researchers discover things without having to open any other applications. Features a AskMeAnything bot which fetches data from WolframAlpha, a simple scratchpad and a basic calculator. Requires Nodejs, Electron (electron.atom.io) and MongoDB.
-
+edit edit edit
 ### Installation
 ```
 npm install -g electron-prebuilt
